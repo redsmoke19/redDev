@@ -3,14 +3,20 @@ $white: #fff;
 $black: #000;
 $background: #111111;
 $grey-color: #252525;
+$border-color: #333333;
+$grey-font: #eeeeee;
+$yellow-color: #ffb400;
 
 // Sizes
 $base-font-size: 16px;
 
-$tablet: 768;
+$tablet: 768px;
 $large: 1024;
-$desktop: 1280;
+$desktop-size: 1440px;
 
 $content-mobile: 310px;
 
 // Fonts
+$base-font: 'Open Sans', sans-serif;
+$base-bold-font: 'Open Sans Semibold', sans-serif;
+$bold-font: 'Poppins Bold', sans-serif;

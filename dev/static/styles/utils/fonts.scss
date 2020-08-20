@@ -9,6 +9,7 @@
     font-style: $style;
   }
 }
-@include font-face('Open Sans', '../fonts/opensans/opensans/opensans', 400, 'normal');
-@include font-face('Open Sans', '../fonts/opensans/opensanslight/opensanslight', 300, 'normal');
-@include font-face('Open Sans', '../fonts/opensans/opensanssemibold/opensanssemibold', 600, 'normal');
+@include font-face('Open Sans', '../fonts/opensans/opensans/opensans');
+@include font-face('Open Sans SemiBold', '../fonts/opensans/opensanssemibold/opensanssemibold');
+@include font-face('Poppins Bold', '../fonts/poppins/poppinsbold/poppins-bold');
+@include font-face('Muller Bold', '../fonts/muller/MullerExtraBold');

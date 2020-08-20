@@ -1,6 +1,6 @@
-mixin icon(name,mod)
+mixin icon(name,mod,height,width)
 	if(mod)
-		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod height=height width=width)
 			use(xlink:href="static/images/sprite/symbol/sprite.svg#" + name)
 	else
 		svg(class="svg-sprite-icon icon-" + name)

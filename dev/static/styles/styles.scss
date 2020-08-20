@@ -19,6 +19,10 @@ body {
   line-height: 1.5;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -55,9 +59,9 @@ textarea { resize: none; }
 
 section { position: relative; }
 
-input,
-select,
-button { outline: none; }
+// input,
+// select,
+// button { outline: none; }
 
 .wrapper {
   display: flex;
@@ -69,8 +73,24 @@ button { outline: none; }
 
 .container {
   margin: 0 auto;
-  max-width: $content-mobile;
+  padding: 0 20px;
+  // max-width: $content-mobile;
   width: 100%;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 //Модули

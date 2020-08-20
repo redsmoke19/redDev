@@ -1,0 +1,32 @@
+.home {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    &__welcome {
+        color: $grey-font;
+        font-family: $base-font;
+        font-size: 19px;
+        line-height: 30px;
+        margin-bottom: 55px;
+        text-transform: uppercase;
+    }
+    &__name {
+        color: $yellow-color;
+        font-family: $bold-font;
+        font-size: 29px;
+        font-weight: 600;
+        line-height: 29px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        span {
+            color: $white;
+        }
+    }
+    &__description {
+        color: $white;
+        font-family: $base-bold-font;
+        font-size: 14px;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
+}
