@@ -7,7 +7,11 @@
     right: 20px;
     top: 20px;
     width: 54px;
-    z-index: 1;
+    z-index: 10;
+    @media screen and (min-width: $tablet-size) {
+        right: 25px;
+        top: 25px;
+    }
     &__line {
         background-color: $white;
         border-radius: 6px;

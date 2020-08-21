@@ -8,17 +8,18 @@
     console.log(document.body);
 
     function toggleLink(item) {
-      item.classList.toggle('main-nav__item--open')
+      item.classList.toggle('main-nav__item--open');
     }
 
     function sandwichOpen() {
       sandwich.classList.toggle('sandwich-open');
       mainNav.classList.toggle('main-nav--open');
       document.body.classList.toggle('overflow-hidden');
-      navItems.forEach(item => {
-        setTimeout(toggleLink, 2000, item);
-        clearTimeout();
-        // item.classList.toggle('main-nav__item--open');
+      navItems.forEach((item, i) => {
+        setTimeout(() => {
+          toggleLink(item);
+        }, 150 * ++i);
+        console.log(i, ++i);
       });
     }
 

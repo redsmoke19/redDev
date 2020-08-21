@@ -1,7 +1,67 @@
-.home {
+main.inner {
     align-items: center;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home {
+    &__wrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 0;
+        @media screen and (min-width: $tablet-size) {
+            align-items: center;
+            padding: 25px 0;
+        }
+        @media screen and (min-width: $desktop-size) {
+            flex-direction: row;
+        }
+    }
+    &__inner {
+        @media screen and (min-width: $tablet-size) {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media screen and (min-width: $desktop-size) {
+            align-items: flex-start;
+        }
+    }
+    &__picture {
+        display: none;
+        @media screen and (min-width: $tablet-size) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 270px;
+            height: 270px;
+            border: 3px solid $grey-color;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        @media screen and (min-width: $desktop-size) {
+            border: none;
+            border-radius: 0;
+            flex-shrink: 0;
+            height: 470px;
+            margin-bottom: 0;
+            margin-right: 120px;
+            overflow: inherit;
+            width: 470px;
+        }
+    }
+    &__photo {
+        @media screen and (min-width: $desktop-size) {
+            border-radius: 15px;
+            width: 100%;
+        }
+    }
     &__welcome {
         color: $grey-font;
         font-family: $base-font;
@@ -9,6 +69,14 @@
         line-height: 30px;
         margin-bottom: 55px;
         text-transform: uppercase;
+        @media screen and (min-width: $tablet-size) {
+            display: none;
+        }
+        @media screen and (min-width: $desktop-size) {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
     }
     &__name {
         color: $yellow-color;
@@ -21,6 +89,15 @@
         span {
             color: $white;
         }
+        @media screen and (min-width: $tablet-size) {
+            font-size: 38px;
+            line-height: 38px;
+        }
+        @media screen and (min-width: $desktop-size) {
+            font-size: 45px;
+            line-height: 45px;
+            margin-bottom: 50px;
+        }
     }
     &__description {
         color: $white;
@@ -28,5 +105,29 @@
         font-size: 14px;
         line-height: 28px;
         margin-bottom: 30px;
+        @media screen and (min-width: $tablet-size) {
+            font-size: 15px;
+            margin-bottom: 50px;
+            padding: 0 80px;
+        }
+        @media screen and (min-width: $desktop-size) {
+            font-size: 16px;
+            line-height: 32px;
+            margin-bottom: 60px;
+            padding: 0;
+        }
+    }
+    &__button {
+        @media screen and (min-width: $tablet-size) {
+            width: 30%;
+        }
+        @media screen and (min-width: $desktop-size) {
+            height: 60px;
+            width: 41%;
+            span {
+                font-size: 25px;
+                line-height: 32px;
+            }
+        }
     }
 }
