@@ -1,0 +1,17 @@
+.about {
+  &__title {
+    background-color: $grey-color;
+    font-size: 26px;
+    font-family: $bold-font;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 30px;
+    padding: 15px 40px 15px 20px;
+    text-transform: uppercase;
+    span {
+      color: $yellow-color;
+    }
+  }
+}
+
+@import "person-info";

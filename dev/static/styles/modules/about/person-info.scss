@@ -1,0 +1,51 @@
+.person-info {
+  &__head {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-family: $bold-font;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+  &__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    border: 3px solid $grey-color;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px auto;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  &__button {
+    width: 54%;
+  }
+}
+
+.person-list {
+  font-family: $base-bold-font;
+  font-size: 14px;
+  line-height: 22px;
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &__title {
+    color: rgba($white, 0.8);
+    display: block;
+  }
+  &__name--small {
+    font-size: 13px;
+  }
+}

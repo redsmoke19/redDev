@@ -1,0 +1,11 @@
+extends layout/main
+
+block variables
+	-var title = 'Обо мне'
+	-var page = 'about-page'
+	-var pageClass = 'about'
+
+block content
+	main(class=pageClass)
+		h1.title.about__title Обо<span>Мне</span>
+		include modules/about/person-info

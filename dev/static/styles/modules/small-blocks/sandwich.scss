@@ -1,45 +1,54 @@
 .sandwich {
-    background-color: $grey-color;
+  background-color: $grey-color;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 54px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 54px;
+  z-index: 10;
+  @media screen and (min-width: $tablet-size) {
+    right: 25px;
+    top: 25px;
+  }
+  @media screen and (min-width: $desktop-size) {
+    display: none;
+  }
+  &--top {
+    background-color: transparent;
+    right: 15px;
+    top: 3px;
+  }
+  &__line {
+    background-color: $white;
     border-radius: 6px;
-    cursor: pointer;
-    height: 54px;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    width: 54px;
-    z-index: 10;
-    @media screen and (min-width: $tablet-size) {
-        right: 25px;
-        top: 25px;
+    height: 2px;
+    position: absolute;
+    left: calc(50% - 12px);
+    top: calc(50% - 1px);
+    transition: all 0.3s ease-out;
+    width: 24px;
+    &--top {
+      transform: translateY(-6px);
     }
-    &__line {
-        background-color: $white;
-        border-radius: 6px;
-        height: 2px;
-        position: absolute;
-        left: calc(50% - 12px);
-        top: calc(50% - 1px);
-        transition: all 0.3s ease-out;
-        width: 24px;
-        &--top {
-            transform: translateY(-6px);
-        }
-        &--bottom {
-            transform: translateY(6px);
-        }
+    &--bottom {
+      transform: translateY(6px);
     }
-    &.sandwich-open {
-        .sandwich__line {
-            &--middle {
-                background-color: transparent;
-                transform: translateX(-70%);
-            }
-            &--top {
-                transform: rotate(45deg);
-            }
-            &--bottom {
-                transform: rotate(-45deg);
-            }
-        }
+  }
+
+  &.sandwich-open {
+    .sandwich__line {
+      &--middle {
+        background-color: transparent;
+        transform: translateX(-70%);
+      }
+      &--top {
+        transform: rotate(45deg);
+      }
+      &--bottom {
+        transform: rotate(-45deg);
+      }
     }
+  }
 }

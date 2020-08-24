@@ -2,7 +2,9 @@ extends layout/main
 
 block variables
 	-var title = 'Главная страница'
+	-var page = 'index-page'
+	-var pageClass = 'index'
 
 block content
-	main.inner
-		include ./modules/main
+	main(class=pageClass)
+		include modules/home

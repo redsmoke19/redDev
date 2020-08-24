@@ -5,12 +5,12 @@ section.home
             .home__picture
                 picture
                     //- source(type="image/webp" srcset="img/content/logo1x.webp, img/content/logo2x.webp 2x")
-                    source(media="(min-width: 1440px)" srcset="../../static/images/content/photo-desktop1x.png 1x, ../../static/images/content/photo-desktop2x.png 2x")
-                    img.home__photo(src="../../static/images/content/photo-tablet1x.png" srcset="../../static/images/content/photo-tablet2x.png 2x" width="263" heigth="263" alt="Фотография Цыганова Олега")
+                    source(media="(min-width: 1440px)" srcset="../../static/images/content/photo-desktop1x2.png 1x, ../../static/images/content/photo-desktop2x2.png 2x")
+                    img.home__photo(src="../../static/images/content/photo-tablet1x1.png" srcset="../../static/images/content/photo-tablet2x1.png 2x" width="263" height="263" alt="Фотография Цыганова Олега")
             .home__inner
                 h3.home__welcome Всем привет!
                 h2.home__name <span>Я,</span> Олег Цыганов
                 p.home__description Я frond-end разработчик из России, специализирующийся на создании качественных сайтов с чистым исходным кодом и доступтыми интерфейсами. Я увлечен своей работой, что позволяет реализовывать проекты любой сложности с исполнением всех требований заказчика быстро, на высоком уровне и в срок.
-                button.button.home__button 
+                a.button.home__button(href="about.html")
                     span Обо мне
                         +icon('icon-user', 'icon__user--button button__icon--user', '20', '20')

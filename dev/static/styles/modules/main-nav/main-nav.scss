@@ -1,54 +1,135 @@
 .main-nav {
-    background-color: $grey-color;
+  background-color: $grey-color;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 120px 20px;
+  pointer-events: none;
+  position: fixed;
+  //right: -100%;
+  transform: translate(100%, 0);
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  width: 100%;
+  @media screen and (min-width: $desktop-size) {
+    align-items: center;
+    background-color: transparent;
+    height: auto;
+    padding: 0;
+    pointer-events: all;
+    right: 30px;
+    transform: translateY(-50%);
+    top: 50%;
+    width: auto;
+  }
+  &--open {
+    pointer-events: all;
+    //right: 0;
+    transform: translate(0, 0);
+    z-index: 1;
+  }
+
+  &__item {
+    align-items: center;
+    border-bottom: 1px solid $border-color;
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 120px 20px;
-    pointer-events: none;
-    position: fixed;
-    right: -100%;
-    top: 0;
-    transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    width: 100%;
-    &--open {
-        pointer-events: all;
-        right: 0;
-    }
-    &__item {
-        align-items: center;
-        border-bottom: 1px solid $border-color;
-        display: flex;
-        justify-content: flex-start;
-        opacity: 0;
-        transition: all 0.2s ease-out;
-        &--active {
-            .main-nav__link {
-                color: $yellow-color;
-            }
-            .main-nav__icon {
-                fill: $yellow-color;
-            }
-        }
-        &--open {
+    justify-content: flex-start;
+    opacity: 0;
+    transition: 0.2s;
+    @media screen and (min-width: $desktop-size) {
+      background-color: $bg-grey-color;
+      border: none;
+      border-radius: 50%;
+      height: 50px;
+      opacity: 1;
+      width: 50px;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      &:hover {
+        background-color: $yellow-color;
+        .main-nav__link {
+          span {
+            background-color: $yellow-color;
+            border-radius: 30px 0 0 30px;
             opacity: 1;
+            pointer-events: all;
+            right: 27px;
+          }
+          svg {
+            fill: $white;
+          }
         }
+      }
     }
-    &__link {
-        color: $white;
-        display: block;
-        padding: 10px 0;
-        text-decoration: none;
-        width: 100%;
-        span {
-            font-family: $bold-font;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 30px;
-            padding-left: 25px;
-            text-transform: uppercase;
+    &--active {
+      color: $yellow-color;
+      @media screen and (min-width: $desktop-size) {
+        background-color: $yellow-color;
+      }
+      .main-nav__link {
+        color: $yellow-color;
+        @media screen and (min-width: $desktop-size) {
+          color: $white;
         }
+      }
+      .main-nav__icon {
+        fill: $yellow-color;
+        @media screen and (min-width: $desktop-size) {
+          fill: $white;
+        }
+      }
     }
-    &__icon {
-        fill: $white;
+    &--open {
+      opacity: 1;
     }
+  }
+
+  &__link {
+    color: $white;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    transition: 0.2s;
+    width: 100%;
+    @media screen and (min-width: $desktop-size) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      padding: 0;
+      position: relative;
+      width: 50px;
+    }
+    span {
+      font-family: $bold-font;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px;
+      padding-left: 25px;
+      text-transform: uppercase;
+      @media screen and (min-width: $desktop-size) {
+        border-radius: 30px;
+        height: 50px;
+        line-height: 50px;
+        opacity: 0;
+        padding: 0 30px 0 20px;
+        position: absolute;
+        pointer-events: none;
+        right: 0;
+        transition: all ease-out 0.2s;
+        white-space: nowrap;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__icon {
+    fill: $white;
+    @media screen and (min-width: $desktop-size) {
+      transition: 0.2s;
+      fill: $light-grey;
+      z-index: 2;
+    }
+  }
 }
