@@ -2,11 +2,11 @@ section.home
     .container
         .home__wrapper
             h1.visually-hidden Главная страница сайта Цыганова Олега
-            .home__picture
-                picture
-                    //- source(type="image/webp" srcset="img/content/logo1x.webp, img/content/logo2x.webp 2x")
-                    source(media="(min-width: 1440px)" srcset="../../static/images/content/photo-desktop1x2.png 1x, ../../static/images/content/photo-desktop2x2.png 2x")
-                    img.home__photo(src="../../static/images/content/photo-tablet1x1.png" srcset="../../static/images/content/photo-tablet2x1.png 2x" width="263" height="263" alt="Фотография Цыганова Олега")
+            //- .home__picture
+            picture.home__picture
+                //- source(type="image/webp" srcset="img/content/logo1x.webp, img/content/logo2x.webp 2x")
+                source(media="(min-width: 1440px)" srcset="../../static/images/content/photo-desktop1x2.png 1x, ../../static/images/content/photo-desktop2x2.png 2x")
+                img.home__photo(src="../../static/images/content/photo-tablet1x1.png" srcset="../../static/images/content/photo-tablet2x1.png 2x" width="263" height="263" alt="Фотография Цыганова Олега")
             .home__inner
                 h3.home__welcome Всем привет!
                 h2.home__name <span>Я,</span> Олег Цыганов
