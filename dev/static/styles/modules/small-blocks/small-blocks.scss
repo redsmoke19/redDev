@@ -1,0 +1,9 @@
+.section {
+    &__title {
+        font-family: $bold-font;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 25px;
+        text-transform: uppercase;
+    }
+}

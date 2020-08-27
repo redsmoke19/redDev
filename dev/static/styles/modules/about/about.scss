@@ -1,4 +1,5 @@
 .about {
+  padding-bottom: 60px;
   &__title {
     background-color: $grey-color;
     font-size: 26px;
@@ -18,3 +19,5 @@
 
 @import "person-info";
 @import "achievements";
+@import "skills";
+@import "experience";
