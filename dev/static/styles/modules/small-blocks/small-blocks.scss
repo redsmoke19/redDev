@@ -5,5 +5,9 @@
         font-weight: 600;
         line-height: 25px;
         text-transform: uppercase;
+        @media screen and (min-width: $tablet-size) {
+            font-size: 26px;
+            line-height: 32px;
+        }
     }
 }

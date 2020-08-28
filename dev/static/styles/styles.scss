@@ -98,10 +98,7 @@ section {
     // max-width: $content-mobile;
     width: 100%;
     @media screen and (min-width: $tablet-size) {
-        padding: 0 25px;
-    }
-    @media screen and (min-width: $desktop-size) {
-      padding: 0 30px;
+        padding: 0 30px;
     }
 }
 

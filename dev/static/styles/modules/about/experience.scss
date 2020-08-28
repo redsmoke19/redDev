@@ -1,6 +1,9 @@
 .experience {
     &__title {
         margin-bottom: 50px;
+        @media screen and (min-width: $tablet-size) {
+            text-align: center;
+        }
     }
     &__inner {
         display: flex;
@@ -68,6 +71,9 @@
         line-height: 21px;
         margin-bottom: 10px;
         text-transform: uppercase;
+        @media screen and (min-width: $tablet-size) {
+            font-size: 18px;
+        }
         span {
             font-family: $base-bold-font;
             font-size: 15px;
@@ -77,5 +83,6 @@
     &__description {
         font-size: 14px;
         line-height: 22px;
+        opacity: 0.9;
     }
 }

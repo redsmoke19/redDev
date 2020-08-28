@@ -20,6 +20,11 @@
     right: 15px;
     top: 3px;
     z-index: 2;
+    @media screen and (min-width: $tablet-size) {
+      background-color: $grey-color;
+      right: 30px;
+      top: 30px;
+    }
   }
   &__line {
     background-color: $white;

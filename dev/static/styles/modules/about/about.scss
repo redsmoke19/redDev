@@ -1,10 +1,13 @@
 .about {
   padding-bottom: 60px;
+  @media screen and (min-width: $tablet-size) {
+    padding: 85px 0 80px 0;
+  }
   &__title {
     background-color: $grey-color;
     font-size: 26px;
     font-family: $bold-font;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 30px;
     padding: 15px 40px 15px 20px;
     position: fixed;
@@ -13,6 +16,31 @@
     z-index: 1;
     span {
       color: $yellow-color;
+    }
+    @media screen and (min-width: $tablet-size) {
+      background-color: transparent;
+      font-size: 56px;
+      line-height: 67px;
+      padding: 0;
+      position: relative;
+      text-align: center;
+    }
+    &::after {
+      display: none;
+      @media screen and (min-width: $tablet-size) {
+        color: rgba($white, 0.07);
+        content: 'Резюме';
+        display: block;
+        font-family: $bold-font;
+        font-size: 110px;
+        font-weight: 800;
+        left: 50%;
+        line-height: 110px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
     }
   }
 }

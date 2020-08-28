@@ -1,16 +1,5 @@
 .achievements {
-  margin-bottom: 80px;
   position: relative;
-  &::after {
-    content: "";
-    height: 1px;
-    width: 50%;
-    position: absolute;
-    bottom: -50px;
-    background-color: $grey-color;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -42,16 +31,36 @@
     display: block;
     font-family: $bold-font;
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 48px;
     sup {
       font-family: $base-font;
       padding-left: 5px;
     }
+    @media screen and (min-width: $tablet-size) {
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
   &__description {
     font-size: 14px;
     line-height: 24px;
+    position: relative;
     text-transform: uppercase;
+    br { display: none; }
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+      padding-left: 40px;
+      br { display: block; }
+      &::after {
+        content: "";
+        height: 1px;
+        width: 30px;
+        background-color: $grey-color;
+        top: 12px;
+        left: 0;
+        position: absolute;
+      }
+    }
   }
 }

@@ -1,12 +1,36 @@
 .person-info {
   padding-top: 90px;
+  margin-bottom: 80px;
+  @media screen and (min-width: $tablet-size) {
+    padding-top: 80px;
+    margin-bottom: 120px;
+  }
+  &::after {
+    content: "";
+    height: 1px;
+    width: 50%;
+    position: absolute;
+    bottom: -50px;
+    background-color: $grey-color;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (min-width: $tablet-size) {
+      bottom: -70px;
+    }
+  }
   &__head {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    @media screen and (min-width: $tablet-size) {
+      margin-bottom: 50px;
+    }
   }
   &__title {
     margin-bottom: 25px;
+    @media screen and (min-width: $tablet-size) {
+      margin-bottom: 20px;
+    }
   }
   &__picture {
     display: flex;
@@ -18,13 +42,22 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 25px auto;
+    @media screen and (min-width: $tablet-size) {
+      display: none;
+    }
   }
   &__info {
     display: flex;
     margin-bottom: 24px;
+    @media screen and (min-width: $tablet-size) {
+      margin-bottom: 30px;
+    }
   }
   &__button {
     width: 54%;
+    @media screen and (min-width: $tablet-size) {
+      width: 27%;
+    }
   }
 }
 
@@ -33,16 +66,29 @@
   font-size: 14px;
   flex-basis: 50%;
   line-height: 22px;
+  @media screen and (min-width: $tablet-size) {
+    font-size: 15px;
+    line-height: 24px;
+  }
   &__item {
     &:not(:last-child) {
       margin-bottom: 24px;
+      @media screen and (min-width: $tablet-size) {
+        margin-bottom: 20px;
+      }
     }
   }
   &__title {
     color: rgba($white, 0.8);
     display: block;
+    @media screen and (min-width: $tablet-size) {
+      display: inline-block;
+    }
   }
   &__name--small {
     font-size: 13px;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+    }
   }
 }
