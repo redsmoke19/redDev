@@ -74,7 +74,7 @@
       width: 27%;
     }
     @media screen and (min-width: $desktop-size) {
-      width: 40%;
+      width: 60%;
     }
   }
 }
@@ -99,7 +99,7 @@
   &__title {
     color: rgba($white, 0.8);
     display: block;
-    @media screen and (min-width: $tablet-size) {
+    @media screen and (min-width: $large-size) {
       display: inline-block;
     }
   }

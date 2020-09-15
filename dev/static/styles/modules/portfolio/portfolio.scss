@@ -1,0 +1,15 @@
+.portfolio {
+  padding-bottom: 60px;
+  @media screen and (min-width: $tablet-size) {
+    padding: 85px 0 80px 0;
+  }
+  &__title {
+    &::after {
+      @media screen and (min-width: $tablet-size) {
+        content: 'Работы';
+      }
+    }
+  }
+}
+
+@import "works";

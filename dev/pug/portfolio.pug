@@ -1,0 +1,11 @@
+extends layout/main
+
+block variables
+	-var title = 'Мое портфолио'
+	-var page = 'portfolio-page'
+	-var pageClass = 'portfolio'
+
+block content
+	main(class=pageClass)
+		h1.title.portfolio__title Мое<span>Портфолио</span>
+		include modules/portfolio/works

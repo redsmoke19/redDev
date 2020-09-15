@@ -95,13 +95,15 @@ section {
 .container {
   margin: 0 auto;
   padding: 0 20px;
-  // max-width: $content-mobile;
   width: 100%;
   @media screen and (min-width: $tablet-size) {
     padding: 0 30px;
   }
   @media screen and (min-width: $desktop-size) {
-    padding: 0 165px;
+    padding: 0 100px;
+  }
+  @media screen and (min-width: $large-size) {
+    padding: 0 120px;
     max-width: 1440px;
   }
 }
