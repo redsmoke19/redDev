@@ -1,137 +1,147 @@
 .skills {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
+  @media screen and (min-width: $tablet-size) {
+    margin-bottom: 120px;
+  }
+  @media screen and (min-width: $desktop-size) {
+    margin-bottom: 125px;
+  }
+  &__title {
+    margin-bottom: 25px;
     @media screen and (min-width: $tablet-size) {
-        margin-bottom: 120px;
+      margin-bottom: 50px;
+      text-align: center;
     }
-    &__title {
-        margin-bottom: 25px;
-        @media screen and (min-width: $tablet-size) {
-            margin-bottom: 50px;
-            text-align: center;
-        }
+    @media screen and (min-width: $desktop-size) {
+      margin-bottom: 55px;
     }
-    &::after {
-        content: "";
-        height: 1px;
-        width: 50%;
-        position: absolute;
-        bottom: -50px;
-        background-color: $grey-color;
-        left: 50%;
-        transform: translateX(-50%);
-        @media screen and (min-width: $tablet-size) {
-            bottom: -70px;
-        }
+  }
+  &::after {
+    content: "";
+    height: 1px;
+    width: 50%;
+    position: absolute;
+    bottom: -50px;
+    background-color: $grey-color;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (min-width: $tablet-size) {
+      bottom: -70px;
     }
+  }
 }
 
 .skill {
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (min-width: $tablet-size) {
+    justify-content: space-between;
+  }
+  @media screen and (min-width: $desktop-size) {
+    margin: 0 auto;
+    width: 850px;
+  }
+  &__item {
+    position: relative;
+    width: 50%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &:nth-child(-n + 2) {
+      margin-bottom: 30px;
+      @media screen and (min-width: $tablet-size) {
+        margin-bottom: 0;
+      }
+    }
     @media screen and (min-width: $tablet-size) {
-        justify-content: space-between;
+      width: 125px;
     }
-    &__item {
-        position: relative;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        &:nth-child(-n + 2) {
-            margin-bottom: 30px;
-            @media screen and (min-width: $tablet-size) {
-                margin-bottom: 0;
-            }
-        }
-        @media screen and (min-width: $tablet-size) {
-            width: 125px;
-        }
+  }
+  &__inner {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    @media screen and (min-width: $tablet-size) {
+      height: 120px;
+      width: 120px;
     }
-    &__inner {
-        position: relative;
-        width: 96px;
-        height: 96px;
-        @media screen and (min-width: $tablet-size) {
-            height: 120px;
-            width: 120px;
-        }
+  }
+  svg {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    @media screen and (min-width: $tablet-size) {
+      height: 120px;
+      width: 120px;
     }
-    svg {
-        position: relative;
-        width: 96px;
-        height: 96px;
-        @media screen and (min-width: $tablet-size) {
-            height: 120px;
-            width: 120px;
-        }
+  }
+  &__circle {
+    width: 96px;
+    height: 96px;
+    fill: none;
+    stroke-width: 10;
+    stroke: $yellow-color;
+    stroke-dasharray: 270;
+    stroke-dashoffset: 270;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    @media screen and (min-width: $tablet-size) {
+      height: 120px;
+      width: 120px;
+      cx: 60;
+      cy: 60;
+      r: 55;
+      stroke-dasharray: 345;
+      stroke-dashoffset: 345;
     }
-    &__circle {
-        width: 96px;
-        height: 96px;
-        fill: none;
-        stroke-width: 10;
-        stroke: $yellow-color;
-        stroke-dasharray: 270;
-        stroke-dashoffset: 270;
-        transform-origin: center;
-        transform: rotate(-90deg);
-        @media screen and (min-width: $tablet-size) {
-            height: 120px;
-            width: 120px;
-            cx: 60;
-            cy: 60;
-            r: 55;
-            stroke-dasharray: 345;
-            stroke-dashoffset: 345;
-        }
-        &--main {
-            stroke-dashoffset: 0;
-            stroke: $grey-color;
-        }
-        &--html {
-            stroke-dashoffset: calc(270 - (270 * 95) / 100);
-            @media screen and (min-width: $tablet-size) {
-                stroke-dashoffset: calc(345 - (345 * 95) / 100);
-            }
-        }
-        &--css {
-            stroke-dashoffset: calc(270 - (270 * 85) / 100);
-            @media screen and (min-width: $tablet-size) {
-                stroke-dashoffset: calc(345 - (345 * 85) / 100);
-            }
-        }
-        &--js {
-            stroke-dashoffset: calc(270 - (270 * 55) / 100);
-            @media screen and (min-width: $tablet-size) {
-                stroke-dashoffset: calc(345 - (345 * 55) / 100);
-            }
-        }
-        &--react {
-            stroke-dashoffset: calc(270 - (270 * 5) / 100);
-            @media screen and (min-width: $tablet-size) {
-                stroke-dashoffset: calc(345 - (345 * 5) / 100);
-            }
-        }
+    &--main {
+      stroke-dashoffset: 0;
+      stroke: $grey-color;
     }
-    &__percent {
-        align-items: center;
-        display: flex;
-        font-family: $bold-font;
-        font-size: 24px;
-        font-weight: 800;
-        height: 100%;
-        justify-content: center;
-        left: 0;
-        line-height: 31px;
-        position: absolute;
-        top: 0;
-        width: 100%;
+    &--html {
+      stroke-dashoffset: calc(270 - (270 * 95) / 100);
+      @media screen and (min-width: $tablet-size) {
+        stroke-dashoffset: calc(345 - (345 * 95) / 100);
+      }
     }
-    &__text {
-        font-family: $base-bold-font;
-        font-size: 16px;
-        line-height: 20px;
-        padding-top: 20px;
+    &--css {
+      stroke-dashoffset: calc(270 - (270 * 85) / 100);
+      @media screen and (min-width: $tablet-size) {
+        stroke-dashoffset: calc(345 - (345 * 85) / 100);
+      }
     }
+    &--js {
+      stroke-dashoffset: calc(270 - (270 * 55) / 100);
+      @media screen and (min-width: $tablet-size) {
+        stroke-dashoffset: calc(345 - (345 * 55) / 100);
+      }
+    }
+    &--react {
+      stroke-dashoffset: calc(270 - (270 * 5) / 100);
+      @media screen and (min-width: $tablet-size) {
+        stroke-dashoffset: calc(345 - (345 * 5) / 100);
+      }
+    }
+  }
+  &__percent {
+    align-items: center;
+    display: flex;
+    font-family: $bold-font;
+    font-size: 24px;
+    font-weight: 800;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    line-height: 31px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  &__text {
+    font-family: $base-bold-font;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 20px;
+  }
 }

@@ -5,6 +5,9 @@
     padding-top: 80px;
     margin-bottom: 120px;
   }
+  @media screen and (min-width: $desktop-size) {
+    margin-bottom: 125px;
+  }
   &::after {
     content: "";
     height: 1px;
@@ -18,12 +21,21 @@
       bottom: -70px;
     }
   }
+  &__wrapper {
+    @media screen and (min-width: $desktop-size) {
+      display: flex;
+    }
+  }
   &__head {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     @media screen and (min-width: $tablet-size) {
       margin-bottom: 50px;
+    }
+    @media screen and (min-width: $desktop-size) {
+      flex-basis: 50%;
+      margin-bottom: 0;
     }
   }
   &__title {
@@ -52,11 +64,17 @@
     @media screen and (min-width: $tablet-size) {
       margin-bottom: 30px;
     }
+    @media screen and (min-width: $desktop-size) {
+      padding-right: 20px;
+    }
   }
   &__button {
     width: 54%;
     @media screen and (min-width: $tablet-size) {
       width: 27%;
+    }
+    @media screen and (min-width: $desktop-size) {
+      width: 40%;
     }
   }
 }

@@ -1,88 +1,99 @@
 .experience {
-    &__title {
-        margin-bottom: 50px;
-        @media screen and (min-width: $tablet-size) {
-            text-align: center;
-        }
+  &__title {
+    margin-bottom: 50px;
+    @media screen and (min-width: $tablet-size) {
+      text-align: center;
     }
-    &__inner {
-        display: flex;
-        flex-direction: column;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $desktop-size) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
-    &__list {
-        &:not(:last-child) {
-            margin-bottom: 50px;
-        }
+  }
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 50px;
     }
-    &__item {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        padding-left: 60px;
-        position: relative;
-        &:not(:last-child) {
-            margin-bottom: 50px;
-        }
-        &::after {
-            content: "";
-            width: 1px;
-            height: 100%;
-            background-color: $grey-color;
-            position: absolute;
-            top: 0;
-            left: 20px;
-            transform: translateX(-50%);
-        }
+    @media screen and (min-width: $desktop-size) {
+      flex: 0 0 47%;
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
     }
-    &__icon-container {
-        background-color: $yellow-color;
-        border-radius: 50%;
-        height: 40px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 40px;
-        z-index: 1;
+  }
+  &__item {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 50px;
     }
-    &__icon {
-        fill: $white;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    &::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: $grey-color;
+      position: absolute;
+      top: 0;
+      left: 20px;
+      transform: translateX(-50%);
     }
-    &__time {
-        background-color: $grey-color;
-        border-radius: 20px;
-        color: rgba($white, 0.8);
-        display: inline-block;
-        font-family: $base-bold-font;
-        font-size: 12px;
-        line-height: 19px;
-        margin-bottom: 20px;
-        padding: 0 10px;
-        position: relative;
-        text-transform: uppercase;
+  }
+  &__icon-container {
+    background-color: $yellow-color;
+    border-radius: 50%;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: 1;
+  }
+  &__icon {
+    fill: $white;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__time {
+    background-color: $grey-color;
+    border-radius: 20px;
+    color: rgba($white, 0.8);
+    display: inline-block;
+    font-family: $base-bold-font;
+    font-size: 12px;
+    line-height: 19px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  &__name {
+    font-family: $bold-font;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 18px;
     }
-    &__name {
-        font-family: $bold-font;
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 21px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        @media screen and (min-width: $tablet-size) {
-            font-size: 18px;
-        }
-        span {
-            font-family: $base-bold-font;
-            font-size: 15px;
-            line-height: 18px;
-        }
+    span {
+      font-family: $base-bold-font;
+      font-size: 15px;
+      line-height: 18px;
     }
-    &__description {
-        font-size: 14px;
-        line-height: 22px;
-        opacity: 0.9;
-    }
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 22px;
+    opacity: 0.9;
+  }
 }
