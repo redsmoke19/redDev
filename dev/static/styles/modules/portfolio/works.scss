@@ -1,3 +1,22 @@
 .works {
   padding-top: 90px;
+  &__list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__item {
+    height: auto;
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__photo {
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+  }
 }
