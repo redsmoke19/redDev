@@ -7,16 +7,24 @@
     flex-direction: column;
   }
   &__item {
+    border-radius: 10px;
     height: auto;
+    overflow: hidden;
     width: 100%;
     &:not(:last-child) {
       margin-bottom: 30px;
     }
   }
   &__photo {
-    border-radius: 10px;
     object-fit: cover;
     object-position: top;
+    transition: all 0.2s ease-out;
     width: 100%;
+    @media screen and (min-width: $desktop-size) {
+        cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 }
