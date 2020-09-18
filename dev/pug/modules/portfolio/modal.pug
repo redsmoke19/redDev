@@ -6,20 +6,17 @@
 		ul.modal-works__list
 			li.modal-works__item
 				+icon('icon-file', 'modal-works__icon modal-works__icon--file', '15', '15')
-				span.modal-works__lable Название проекта:
-				span.modal-works__value.js-project-name CatEnergy
+				p.modal-works__lable Название проекта: <span class="modal-works__value js-project-name">CatEnergy</span>
 			li.modal-works__item
 				+icon('icon-user', 'modal-works__icon modal-works__icon--user', '15', '15')
-				span.modal-works__lable Клиент:
-				span.modal-works__value.js-project-client HTMLAcademy (тренировка)
+				p.modal-works__lable Клиент:	<span class="modal-works__value js-project-client"> HTMLAcademy (тренировка)</span>
 			li.modal-works__item
 				+icon('icon-desktop', 'modal-works__icon modal-works__icon--desktop', '15', '15')
-				span.modal-works__lable Языки:
-				span.modal-works__value.js-project-language HTML, CSS, JavaScript
+				p.modal-works__lable Языки: <span class="modal-works__value js-project-language"> HTML, CSS, JavaScript</span>
 			li.modal-works__item
 				+icon('icon-share', 'modal-works__icon modal-works__icon--share', '15', '15')
-				span.modal-works__lable Preview:
-				a.modal-works__value.modal-works__value--site.js-project-site(href="https://redsmoke19.github.io/catcat/" target="_blank") redsmoke19.github.io/catcat/
+				p.modal-works__lable Preview: 
+					a.modal-works__value.modal-works__value--site.js-project-site(href="https://redsmoke19.github.io/catcat/" target="_blank") redsmoke19.github.io/catcat/
 		picture.modal-works__picture
 			//source(type="image/webp" srcset="img/content/logo1x.webp, img/content/logo2x.webp 2x")
 			//source(media="(min-width: 992px)" srcset="../../static/images/content/photo-desktop1x3.png 1x, ../../static/images/content/photo-desktop2x3.png 2x")

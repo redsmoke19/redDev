@@ -34,11 +34,20 @@
     let modal = document.querySelector('.modal-works');
     let modalClose = document.querySelector('.modal-works__icon--close');
     let previewsPicture = document.querySelectorAll('.works__item');
+    let modalTitle = document.querySelector('.modal-works__title');
+    let modalImage = document.querySelector('.modal-works__photo');
+    let modalProjectName = document.querySelector('.js-project-name');
 
     previewsPicture.forEach(item => {
       item.addEventListener('click', () => {
         modal.classList.add('modal-works--open');
         document.body.classList.add('overflow-hidden');
+        let itemImage = item.querySelector('.works__photo');
+        modalTitle.textContent = itemImage.alt;
+        modalProjectName.textContent = itemImage.alt;
+        console.log(modalProjectName);
+        modalImage.src = itemImage.src;
+        modalImage.srcset = itemImage.srcset;
       });
     });
 
