@@ -82,8 +82,8 @@
     fill: none;
     stroke-width: 10;
     stroke: $yellow-color;
-    stroke-dasharray: 270;
-    stroke-dashoffset: 270;
+    stroke-dasharray: 270px;
+    stroke-dashoffset: 270px;
     transform-origin: center;
     transform: rotate(-90deg);
     @media screen and (min-width: $tablet-size) {
@@ -92,35 +92,35 @@
       cx: 60;
       cy: 60;
       r: 55;
-      stroke-dasharray: 345;
-      stroke-dashoffset: 345;
+      stroke-dasharray: 345px;
+      stroke-dashoffset: 345px;
     }
     &--main {
       stroke-dashoffset: 0;
       stroke: $grey-color;
     }
     &--html {
-      stroke-dashoffset: calc(270 - (270 * 95) / 100);
+      stroke-dashoffset: calc(270px - (270px * 95) / 100);
       @media screen and (min-width: $tablet-size) {
-        stroke-dashoffset: calc(345 - (345 * 95) / 100);
+        stroke-dashoffset: calc(345px - (345px * 95) / 100);
       }
     }
     &--css {
-      stroke-dashoffset: calc(270 - (270 * 85) / 100);
+      stroke-dashoffset: calc(270px - (270px * 85) / 100);
       @media screen and (min-width: $tablet-size) {
-        stroke-dashoffset: calc(345 - (345 * 85) / 100);
+        stroke-dashoffset: calc(345px - (345px * 85) / 100);
       }
     }
     &--js {
-      stroke-dashoffset: calc(270 - (270 * 55) / 100);
+      stroke-dashoffset: calc(270px - (270px * 55) / 100);
       @media screen and (min-width: $tablet-size) {
-        stroke-dashoffset: calc(345 - (345 * 55) / 100);
+        stroke-dashoffset: calc(345px - (345px * 55) / 100);
       }
     }
     &--react {
-      stroke-dashoffset: calc(270 - (270 * 5) / 100);
+      stroke-dashoffset: calc(270px - (270px * 5) / 100);
       @media screen and (min-width: $tablet-size) {
-        stroke-dashoffset: calc(345 - (345 * 5) / 100);
+        stroke-dashoffset: calc(345px - (345px * 5) / 100);
       }
     }
   }

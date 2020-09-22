@@ -1,9 +1,10 @@
+'use strict';
 (function() {
   // Sandwich
   const getSandwichToggle = function() {
     const ENTER_BUTTON = 13;
     let sandwich = document.querySelector('.sandwich');
-    let mainNav = document.querySelector('.main-nav');
+    window.mainNav = document.querySelector('.main-nav');
     let navItems = Array.from(document.querySelectorAll('.main-nav__item'));
     console.log(document.body);
 
@@ -11,63 +12,104 @@
       item.classList.toggle('main-nav__item--open');
     }
 
-    function sandwichOpen() {
+    window.sandwichOpen = function() {
       sandwich.classList.toggle('sandwich-open');
-      mainNav.classList.toggle('main-nav--open');
+      window.mainNav.classList.toggle('main-nav--open');
       document.body.classList.toggle('overflow-hidden');
       navItems.forEach((item, i) => {
         setTimeout(() => {
           toggleLink(item);
         }, 150 * ++i);
       });
-    }
+    };
 
-    sandwich.addEventListener('click', sandwichOpen);
+    sandwich.addEventListener('click', window.sandwichOpen);
     sandwich.addEventListener('keydown', function(evt) {
       if (evt.keyCode === ENTER_BUTTON) {
-        sandwichOpen();
+        window.sandwichOpen();
       }
     });
   };
   // Portfolio modal
   const getPortfolioModal = function() {
-    let modal = document.querySelector('.modal-works');
-    let modalClose = document.querySelector('.modal-works__icon--close');
-    let previewsPicture = document.querySelectorAll('.works__item');
-    let modalTitle = document.querySelector('.modal-works__title');
-    let modalImage = document.querySelector('.modal-works__photo');
-    let modalProjectName = document.querySelector('.js-project-name');
+    if (document.body.classList.contains('portfolio-page')) {
+      let modal = document.querySelector('.modal-works');
+      let modalClose = document.querySelector('.modal-works__icon--close');
+      let previewsPicture = document.querySelectorAll('.works__item');
+      let modalTitle = document.querySelector('.modal-works__title');
+      let modalImage = document.querySelector('.modal-works__photo');
+      let modalProjectName = document.querySelector('.js-project-name');
 
-    previewsPicture.forEach(item => {
-      item.addEventListener('click', () => {
-        modal.classList.add('modal-works--open');
-        document.body.classList.add('overflow-hidden');
-        let itemImage = item.querySelector('.works__photo');
-        modalTitle.textContent = itemImage.alt;
-        modalProjectName.textContent = itemImage.alt;
-        console.log(modalProjectName);
-        modalImage.src = itemImage.src;
-        modalImage.srcset = itemImage.srcset;
+      previewsPicture.forEach(item => {
+        item.addEventListener('click', () => {
+          modal.classList.add('modal-works--open');
+          document.body.classList.add('overflow-hidden');
+          let itemImage = item.querySelector('.works__photo');
+          modalTitle.textContent = itemImage.alt;
+          modalProjectName.textContent = itemImage.alt;
+          console.log(modalProjectName);
+          modalImage.src = itemImage.src;
+          modalImage.srcset = itemImage.srcset;
+        });
       });
-    });
 
-    const getModalClose = function() {
-      modal.classList.remove('modal-works--open');
-      document.body.classList.remove('overflow-hidden');
-    };
+      const getModalClose = function() {
+        modal.classList.remove('modal-works--open');
+        document.body.classList.remove('overflow-hidden');
+      };
 
-    modalClose.addEventListener('click', getModalClose);
-    // modal.addEventListener('click', (e) => {
-    //   if (e.target.classList.contains('modal-works')) {
-    //     getModalClose();
-    //   }
-    // });
-    document.addEventListener('keydown', (e) => {
-      if (e.keyCode === 27) {
-        getModalClose();
+      modalClose.addEventListener('click', getModalClose);
+      // modal.addEventListener('click', (e) => {
+      //   if (e.target.classList.contains('modal-works')) {
+      //     getModalClose();
+      //   }
+      // });
+      document.addEventListener('keydown', (e) => {
+        if (e.keyCode === 27) {
+          getModalClose();
+        }
+      });
+    }
+  };
+  // Skills circle resize
+  const getCircleSize = function() {
+    let circles = document.querySelectorAll('.skill__circle');
+    circles.forEach(item => {
+      if (window.matchMedia('(max-width: 767px').matches) {
+        item.setAttribute('r', '43');
+        item.setAttribute('cx', '48');
+        item.setAttribute('cy', '48');
+      }
+      if (window.matchMedia('(min-width: 768px').matches) {
+        item.setAttribute('r', '55');
+        item.setAttribute('cx', '60');
+        item.setAttribute('cy', '60');
       }
     });
   };
+  // Resize Handler
+  (function() {
+    window.addEventListener('resize', resizeThrottler, false);
+    var resizeTimeout;
+    function resizeThrottler() {
+      if (!resizeTimeout) {
+        resizeTimeout = setTimeout(function() {
+          resizeTimeout = null;
+          actualResizeHandler();
+        }, 66);
+      }
+    }
+    function actualResizeHandler() {
+      getCircleSize();
+      if (window.matchMedia('(min-width: 992px)').matches) {
+        if (window.mainNav.classList.contains('main-nav--open')) {
+          window.sandwichOpen();
+        }
+      }
+    }
+  })();
+
   getSandwichToggle();
   getPortfolioModal();
+  getCircleSize();
 })();
