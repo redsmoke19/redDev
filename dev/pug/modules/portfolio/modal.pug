@@ -1,18 +1,21 @@
 .modal.modal-works
 	.modal-works__top
-		+icon('icon-close', 'modal-works__icon modal-works__icon--close', '20', '20')
+		+icon('icon-close', 'modal-works__close', '20', '20')
 	.container
 		h1.modal-works__title Название проекта
 		ul.modal-works__list
 			li.modal-works__item
 				+icon('icon-file', 'modal-works__icon modal-works__icon--file', '15', '15')
-				p.modal-works__lable Название проекта: <span class="modal-works__value js-project-name">CatEnergy</span>
+				p.modal-works__lable Название проекта:
+					span.modal-works__value.js-project-name CatEnergy
 			li.modal-works__item
 				+icon('icon-user', 'modal-works__icon modal-works__icon--user', '15', '15')
-				p.modal-works__lable Клиент:	<span class="modal-works__value js-project-client"> HTMLAcademy (тренировка)</span>
+				p.modal-works__lable Клиент:
+					span.modal-works__value.js-project-client HTMLAcademy (тренировка)
 			li.modal-works__item
 				+icon('icon-desktop', 'modal-works__icon modal-works__icon--desktop', '15', '15')
-				p.modal-works__lable Языки: <span class="modal-works__value js-project-language"> HTML, CSS, JavaScript</span>
+				p.modal-works__lable Языки:
+					span.modal-works__value.js-project-language  HTML, CSS, JavaScript
 			li.modal-works__item
 				+icon('icon-share', 'modal-works__icon modal-works__icon--share', '15', '15')
 				p.modal-works__lable Preview: 

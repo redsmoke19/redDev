@@ -34,7 +34,7 @@
   const getPortfolioModal = function() {
     if (document.body.classList.contains('portfolio-page')) {
       let modal = document.querySelector('.modal-works');
-      let modalClose = document.querySelector('.modal-works__icon--close');
+      let modalClose = document.querySelector('.modal-works__close');
       let previewsPicture = document.querySelectorAll('.works__item');
       let modalTitle = document.querySelector('.modal-works__title');
       let modalImage = document.querySelector('.modal-works__photo');
@@ -48,13 +48,13 @@
           document.body.classList.add('overflow-hidden');
           let itemImage = item.querySelector('.works__photo');
           modalTitle.textContent = itemImage.alt;
-          modalProjectName.textContent = itemImage.alt;
+          modalProjectName.textContent = ' ' + itemImage.alt;
           modalImage.src = itemImage.src;
           modalImage.srcset = itemImage.srcset;
           modalImage.alt = itemImage.alt;
           modalLink.textContent = itemImage.dataset.modalSite;
           modalLink.href = itemImage.dataset.modalHref;
-          modalClient.textContent = itemImage.dataset.modalClient;
+          modalClient.textContent = ' ' + itemImage.dataset.modalClient;
         });
       });
 

@@ -5,6 +5,12 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    @media screen and (min-width: $tablet-size) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
   }
   &__item {
     border-radius: 10px;
@@ -14,12 +20,18 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+    @media screen and (min-width: $tablet-size) {
+      width: 48%;
+    }
   }
   &__photo {
     object-fit: cover;
     object-position: top;
     transition: all 0.2s ease-out;
     width: 100%;
+    @media screen and (min-width: $tablet-size) {
+      min-height: 200px;
+    }
     @media screen and (min-width: $desktop-size) {
         cursor: pointer;
       &:hover {
