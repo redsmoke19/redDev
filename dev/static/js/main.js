@@ -39,17 +39,22 @@
       let modalTitle = document.querySelector('.modal-works__title');
       let modalImage = document.querySelector('.modal-works__photo');
       let modalProjectName = document.querySelector('.js-project-name');
+      let modalLink = document.querySelector('.js-project-site');
+      let modalClient = document.querySelector('.js-project-client');
 
-      previewsPicture.forEach(item => {
+      previewsPicture.forEach((item, index) => {
         item.addEventListener('click', () => {
           modal.classList.add('modal-works--open');
           document.body.classList.add('overflow-hidden');
           let itemImage = item.querySelector('.works__photo');
           modalTitle.textContent = itemImage.alt;
           modalProjectName.textContent = itemImage.alt;
-          console.log(modalProjectName);
           modalImage.src = itemImage.src;
           modalImage.srcset = itemImage.srcset;
+          modalImage.alt = itemImage.alt;
+          modalLink.textContent = itemImage.dataset.modalSite;
+          modalLink.href = itemImage.dataset.modalHref;
+          modalClient.textContent = itemImage.dataset.modalClient;
         });
       });
 
