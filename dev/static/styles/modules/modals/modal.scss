@@ -11,10 +11,26 @@
     transform: scale(0.4);
     width: 100%;
     z-index: 5;
+    @media screen and (min-width: $desktop-size) {
+      left: 50%;
+      top: 50%;
+      height: auto;
+      width: 660px;
+      transform: translate(-50%, -50%) scale(0.4);
+      .container {
+        margin: 0;
+        padding: 30px;
+        width: auto;
+        max-width: 660px;
+      }
+    }
     &.modal-works--open {
       opacity: 1;
       pointer-events: all;
       transform: scale(1);
+      @media screen and (min-width: $desktop-size) {
+        transform: translate(-50%, -50%) scale(1) ;
+      }
     }
     &__top {
       align-items: center;
@@ -49,6 +65,9 @@
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 24px;
+      }
+      @media screen and (min-width: $desktop-size) {
+        padding: 0;
       }
     }
     &__item {
