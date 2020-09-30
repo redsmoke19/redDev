@@ -12,7 +12,7 @@ nav.main-nav
 			a.main-nav__link(href=pageClass === 'portfolio' ? false : 'portfolio.html')
 				+icon('icon-suitcase', 'main-nav__icon main-nav__icon--suitcase', '20', '20')
 				span Портфолио
-		li.main-nav__item
-			a.main-nav__link(href="#")
+		li.main-nav__item(class=pageClass !== 'contacts' ? false : 'main-nav__item--active')
+			a.main-nav__link(href=pageClass === 'contacts' ? false : 'contacts.html')
 				+icon('icon-contact', 'main-nav__icon main-nav__icon--contact', '20', '20')
 				span Контакты

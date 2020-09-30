@@ -1,0 +1,12 @@
+extends layout/main
+
+block variables
+	-var title = 'Контакты'
+	-var page = 'contacts-page'
+	-var pageClass = 'contacts'
+
+block content
+	main(class=pageClass)
+		h1.title.contacts__title Напиши<span>мне</span>
+		include modules/contacts/write-me
+		include modules/contacts/you-message
