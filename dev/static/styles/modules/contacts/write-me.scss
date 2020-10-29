@@ -1,3 +1,65 @@
 .write-me {
-    padding-top: 90px;
+  padding-top: 90px;
+  &__title {
+    font-family: $bold-font;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25px;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 20px 0;
+  }
+}
+
+.connection {
+  margin-bottom: 20px;
+  &__item {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    line-height: 21px;
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    color: rgba($white, .8);
+    display: block;
+  }
+  &__link {
+    color: $white;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  &__icon {
+    fill: $yellow-color;
+    margin-right: 15px;
+  }
+}
+
+.social {
+  display: flex;
+  margin-bottom: 50px;
+  &__item:not(:last-child) {
+    margin-right: 15px;
+  }
+  &__link {
+    display: block;
+    background-color: $bg-grey-color;
+    border-radius: 50%;
+    height: 40px;
+    position: relative;
+    width: 40px;
+  }
+  &__icon {
+    fill: $white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

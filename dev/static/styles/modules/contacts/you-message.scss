@@ -1,0 +1,55 @@
+.you-message {
+  &__form {
+    margin-bottom: 30px;
+  }
+  &__input {
+    background-color: #252525;
+    border: none;
+    border-radius: 30px;
+    color: $white;
+    font-family: $bold-font;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    outline: none;
+    padding: 11px 25px;
+    text-transform: uppercase;
+    width: 100%;
+    &--text {
+      min-height: 160px;
+      resize: vertical;
+    }
+    &::placeholder {
+      color: rgba($white, .5);
+      font-family: $base-font;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    &:focus {
+      box-shadow: 0 0 10px rgba($white, .6);
+    }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__button {
+    color: $white;
+    font-family: $bold-font;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  &__success {
+    align-items: center;
+    background-color: $green-color;
+    border-radius: 30px;
+    color: $white;
+    display: flex;
+    height: 46px;
+    justify-content: center;
+  }
+  &__icon {
+    fill: $white;
+    margin-right: 10px;
+  }
+}

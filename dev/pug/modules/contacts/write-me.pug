@@ -6,12 +6,14 @@ section.write-me
             ul.write-me__connection.connection
                 li.connection__item
                     +icon('icon-mail', 'connection__icon connection__icon--mail', '35', '35')
-                    span.connection__title Напишите мне
-                    a.connection__link(href="mailto:tsyganovdev@gmail.com") tsyganovdev@gmail.com
+                    .connection__inner
+                        span.connection__title Напишите мне
+                        a.connection__link(href="mailto:tsyganovdev@gmail.com") tsyganovdev@gmail.com
                 li.connection__item
                     +icon('icon-phone', 'connection__icon connection__icon--phone', '35', '35')
-                    span.connection__title Позвоните мне
-                    a.connection__link(href="tel:+79272030036") +7-927-203-00-36
+                    .connection__inner
+                        span.connection__title Позвоните мне
+                        a.connection__link(href="tel:+79272030036") +7-927-203-00-36
             ul.write-me__social.social
                 li.social__item
                     a.social__link(href="https://vk.com/redsmoke")
