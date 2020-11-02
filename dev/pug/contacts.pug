@@ -8,5 +8,7 @@ block variables
 block content
 	main(class=pageClass)
 		h1.title.contacts__title Напиши<span>мне</span>
-		include modules/contacts/write-me
-		include modules/contacts/you-message
+		.container
+			.contacts__wrapper
+				include modules/contacts/write-me
+				include modules/contacts/you-message

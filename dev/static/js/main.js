@@ -132,10 +132,16 @@
 
     function actualResizeHandler() {
       getCircleSize();
+      let mainNav = document.querySelector('.main-nav');
       if (window.matchMedia('(min-width: 992px)').matches) {
+        mainNav.style.transition = 'none';
         if (window.mainNav.classList.contains('main-nav--open')) {
           window.sandwichOpen();
         }
+      }
+      if (window.matchMedia('(max-width: 991px)').matches) {
+        mainNav.style.transition = 'all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)';
+        console.log(mainNav);
       }
     }
   })();

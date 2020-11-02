@@ -1,11 +1,11 @@
 section.you-message
-	.container
-		form.you-message__form
+	form.you-message__form
+		.you-message__top
 			input.you-message__input(type="text" name="youName" placeholder="Ваше имя")
 			input.you-message__input(type="text" name="youMail" placeholder="Ваш email")
 			input.you-message__input(type="text" name="youTitle" placeholder="Тема сообщения")
-			textarea.you-message__input.you-message__input--text(name="youText" placeholder="Ваш текст")
-			button(type="submit").you-message__button.button Отправить сообщение
-		p.you-message__success
-			+icon('icon-success', 'you-message__icon', '25', '25')
-			span Сообщение отправлено
+		textarea.you-message__input.you-message__input--text(name="youText" placeholder="Ваш текст")
+		button(type="submit").you-message__button.button Отправить сообщение
+	p.you-message__success
+		+icon('icon-success', 'you-message__icon', '25', '25')
+		span Сообщение отправлено

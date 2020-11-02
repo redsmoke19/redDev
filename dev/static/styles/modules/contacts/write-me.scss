@@ -1,5 +1,10 @@
 .write-me {
   padding-top: 90px;
+  @media screen and (min-width: $large-size) {
+    margin-right: 30px;
+    padding-top: 0;
+    width: 35%;
+  }
   &__title {
     font-family: $bold-font;
     font-weight: 700;
@@ -7,11 +12,21 @@
     line-height: 25px;
     margin: 0 0 20px 0;
     text-transform: uppercase;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 26px;
+      line-height: 31px;
+      margin-bottom: 15px;
+    }
   }
   &__description {
     font-size: 14px;
     line-height: 22px;
     margin: 0 0 20px 0;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -22,6 +37,9 @@
     display: flex;
     font-size: 14px;
     line-height: 21px;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+    }
     &:first-child {
       margin-bottom: 20px;
     }
@@ -34,6 +52,12 @@
     color: $white;
     font-weight: 800;
     text-decoration: none;
+    @media screen and (min-width: $desktop-size) {
+      transition: color linear .15s;
+      &:hover {
+        color: rgba($yellow-color, .9);
+      }
+    }
   }
   &__icon {
     fill: $yellow-color;
@@ -53,7 +77,16 @@
     border-radius: 50%;
     height: 40px;
     position: relative;
+    transition: background-color linear .15s;
     width: 40px;
+    @media screen and (min-width: $desktop-size) {
+      &:hover {
+        background-color: rgba($bg-grey-color, .8);
+        svg {
+          opacity: 0.5;
+        }
+      }
+    }
   }
   &__icon {
     fill: $white;
@@ -61,5 +94,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: opacity linear .15s;
   }
 }

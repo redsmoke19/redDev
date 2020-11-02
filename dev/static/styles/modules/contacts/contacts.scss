@@ -11,6 +11,12 @@
       }
     }
   }
+  &__wrapper {
+    @media screen and (min-width: $large-size) {
+      display: flex;
+      padding-top: 90px;
+    }
+  }
 }
 
 @import 'write-me';

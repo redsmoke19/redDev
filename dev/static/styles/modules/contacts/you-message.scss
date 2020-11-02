@@ -1,9 +1,19 @@
 .you-message {
   &__form {
     margin-bottom: 30px;
+    @media screen and (min-width: $tablet-size) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__top {
+    @media screen and (min-width: $tablet-size) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__input {
-    background-color: #252525;
+    background-color: $grey-color;
     border: none;
     border-radius: 30px;
     color: $white;
@@ -12,12 +22,22 @@
     line-height: 24px;
     font-weight: 700;
     outline: none;
+    margin-bottom: 30px;
     padding: 11px 25px;
     text-transform: uppercase;
+    transition: background-color linear .15s;
     width: 100%;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+      width: 30.5%;
+      &:hover {
+        background-color: rgba($grey-color, .9);
+      }
+    }
     &--text {
       min-height: 160px;
       resize: vertical;
+      width: 100%;
     }
     &::placeholder {
       color: rgba($white, .5);
@@ -27,17 +47,23 @@
     }
     &:focus {
       box-shadow: 0 0 10px rgba($white, .6);
-    }
-    &:not(:last-child) {
-      margin-bottom: 30px;
+      background-color: rgba($grey-color, .9);
     }
   }
   &__button {
     color: $white;
     font-family: $bold-font;
     font-weight: 700;
+    line-height: 24px;
     text-transform: uppercase;
     width: 100%;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+      width: 36%;
+    }
+    &:focus {
+      box-shadow: 0 0 10px rgba($white, .6);
+    }
   }
   &__success {
     align-items: center;
@@ -45,8 +71,14 @@
     border-radius: 30px;
     color: $white;
     display: flex;
+    font-family: $bold-font;
+    font-weight: 700;
     height: 46px;
     justify-content: center;
+    text-transform: uppercase;
+    @media screen and (min-width: $tablet-size) {
+      font-size: 15px;
+    }
   }
   &__icon {
     fill: $white;
