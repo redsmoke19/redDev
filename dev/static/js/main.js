@@ -7,7 +7,6 @@
     let sandwich = document.querySelector('.sandwich');
     window.mainNav = document.querySelector('.main-nav');
     let navItems = Array.from(document.querySelectorAll('.main-nav__item'));
-    console.log(document.body);
 
     function toggleLink(item) {
       item.classList.toggle('main-nav__item--open');
@@ -30,75 +29,6 @@
         window.sandwichOpen();
       }
     });
-  };
-  // Portfolio modal
-  const getPortfolioModal = function() {
-    if (document.body.classList.contains('portfolio-page')) {
-      let modal = document.querySelector('.modal-works');
-      let modalClose = document.querySelector('.modal-works__button');
-      let previewsPicture = document.querySelectorAll('.works__item');
-      let modalTitle = document.querySelector('.modal-works__title');
-      let modalImage = document.querySelector('.modal-works__photo');
-      let modalProjectName = document.querySelector('.js-project-name');
-      let modalLink = document.querySelector('.js-project-site');
-      let modalClient = document.querySelector('.js-project-client');
-      let overlay = document.querySelector('.overlay');
-
-      previewsPicture.forEach((item) => {
-        item.addEventListener('click', () => {
-          getModalOpen(item);
-        });
-        item.addEventListener('keydown', (e) => {
-          if (e.keyCode === ENTER__CODE) {
-            getModalOpen(item);
-          }
-        });
-      });
-
-      let getModalOpen = function(item) {
-        let itemImage = item.querySelector('.works__photo');
-        modalTitle.textContent = itemImage.alt;
-        modalProjectName.textContent = ' ' + itemImage.alt;
-        modalImage.src = itemImage.src;
-        modalImage.srcset = itemImage.srcset;
-        modalImage.alt = itemImage.alt;
-        modalLink.textContent = itemImage.dataset.modalSite;
-        modalLink.href = itemImage.dataset.modalHref;
-        modalClient.textContent = ' ' + itemImage.dataset.modalClient;
-
-        modal.classList.add('modal-works--open');
-        document.body.classList.add('overflow-hidden');
-        if (window.matchMedia('(min-width: 992px)').matches) {
-          overlay.style.opacity = 1;
-          overlay.style.pointerEvents = 'all';
-        }
-        modalClose.addEventListener('click', getModalClose);
-        document.addEventListener('keydown', closeEcsModal);
-        overlay.addEventListener('click', closeClickOverlay);
-      };
-
-      const getModalClose = function() {
-        modal.classList.remove('modal-works--open');
-        document.body.classList.remove('overflow-hidden');
-        overlay.style.opacity = 0;
-        overlay.style.pointerEvents = 'none';
-        document.removeEventListener('keydown', closeEcsModal);
-        overlay.removeEventListener('click', closeClickOverlay);
-        modalClose.removeEventListener('click', getModalClose);
-      };
-
-      const closeClickOverlay = (e) => {
-        if (e.target.classList.contains('overlay')) {
-          getModalClose();
-        }
-      };
-
-      const closeEcsModal = (e) => {
-        if (e.keyCode === ESC_CODE) {
-          getModalClose();
-        }
-      };
-    }
   };
   // Skills circle resize
   const getCircleSize = function() {
@@ -141,12 +71,124 @@
       }
       if (window.matchMedia('(max-width: 991px)').matches) {
         mainNav.style.transition = 'all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)';
-        console.log(mainNav);
       }
     }
   })();
+  // My works and modal
+  const myWorks = function() {
+    let works = [
+      {
+        name: 'Cat Energy',
+        src: '../../../static/images/content/cat-energy1x.png',
+        srcset: '../../../static/images/content/cat-energy2x.png 2x',
+        description: 'Сайт для животных Cat Energy',
+        link: 'https://redsmoke19.github.io/catcat/',
+        client: 'HTMLAcademy (обучение)'
+      },
+      {
+        name: 'Buy in Ciprus',
+        src: '../../../static/images/content/cyprus1x.png',
+        srcset: '../../../static/images/content/cyprus2x.png 2x',
+        description: 'Недвижимость на Кипре',
+        link: 'https://www.buyincyprus.ru',
+        client: 'Nomia Dev'
+      },
+      {
+        name: 'Buy in Ciprus',
+        src: '../../../static/images/content/cyprus1x.png',
+        srcset: '../../../static/images/content/cyprus2x.png 2x',
+        description: 'Недвижимость на Кипре',
+        link: 'https://www.buyincyprus.ru',
+        client: 'Nomia Dev'
+      }
+    ];
+
+    if (document.body.classList.contains('portfolio-page')) {
+      let worksList = document.querySelector('.works__list');
+      let template = document.querySelector('template').content;
+      let fragment = document.createDocumentFragment();
+      let templateItem = template.querySelector('.works__item');
+      let modal = document.querySelector('.modal-works');
+      let modalClose = document.querySelector('.modal-works__button');
+      let modalTitle = document.querySelector('.modal-works__title');
+      let modalImage = document.querySelector('.modal-works__photo');
+      let modalProjectName = document.querySelector('.js-project-name');
+      let modalLink = document.querySelector('.js-project-site');
+      let modalClient = document.querySelector('.js-project-client');
+      let overlay = document.querySelector('.overlay');
+
+      let getWorksItem = function(arr) {
+        let worksItem = templateItem.cloneNode(true);
+        let worksPhoto = worksItem.querySelector('.works__photo');
+        worksPhoto.src = arr.src;
+        worksPhoto.srcset = arr.srcset;
+        worksPhoto.alt = arr.description;
+        return worksItem;
+      };
+
+      for (let i = 0; i < works.length; i++) {
+        fragment.appendChild(getWorksItem(works[i]));
+      }
+      worksList.appendChild(fragment);
+
+      let worksItem = document.querySelectorAll('.works__item');
+      worksItem.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          getModalOpen(works[index]);
+        });
+        item.addEventListener('keydown', (e) => {
+          if (e.keyCode === ENTER__CODE) {
+            getModalOpen(works[index]);
+          }
+        });
+      });
+
+      let getModalOpen = function(item) {
+        modalTitle.textContent = item.description;
+        modalProjectName.textContent = ' ' + item.description;
+        modalImage.src = item.src;
+        modalImage.srcset = item.srcset;
+        modalImage.alt = item.alt;
+        modalLink.textContent = item.name;
+        modalLink.href = item.link;
+        modalClient.textContent = ' ' + item.client;
+
+        modal.classList.add('modal-works--open');
+        document.body.classList.add('overflow-hidden');
+        if (window.matchMedia('(min-width: 992px)').matches) {
+          overlay.style.opacity = 1;
+          overlay.style.pointerEvents = 'all';
+        }
+        modalClose.addEventListener('click', getModalClose);
+        document.addEventListener('keydown', closeEcsModal);
+        overlay.addEventListener('click', closeClickOverlay);
+      };
+
+      const getModalClose = function() {
+        modal.classList.remove('modal-works--open');
+        document.body.classList.remove('overflow-hidden');
+        overlay.style.opacity = 0;
+        overlay.style.pointerEvents = 'none';
+        document.removeEventListener('keydown', closeEcsModal);
+        overlay.removeEventListener('click', closeClickOverlay);
+        modalClose.removeEventListener('click', getModalClose);
+      };
+
+      const closeClickOverlay = (e) => {
+        if (e.target.classList.contains('overlay')) {
+          getModalClose();
+        }
+      };
+
+      const closeEcsModal = (e) => {
+        if (e.keyCode === ESC_CODE) {
+          getModalClose();
+        }
+      };
+    }
+  };
 
   getSandwichToggle();
-  getPortfolioModal();
   getCircleSize();
+  myWorks();
 })();
