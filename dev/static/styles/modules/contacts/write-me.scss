@@ -77,13 +77,13 @@
     border-radius: 50%;
     height: 40px;
     position: relative;
-    transition: background-color linear .15s;
+    transition: background-color linear 0.15s;
     width: 40px;
     @media screen and (min-width: $desktop-size) {
       &:hover {
         background-color: rgba($bg-grey-color, .8);
         svg {
-          opacity: 0.5;
+          opacity: .5;
         }
       }
     }

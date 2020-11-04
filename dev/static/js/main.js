@@ -78,6 +78,70 @@
   const myWorks = function() {
     let works = [
       {
+        name: 'Help a neighbor',
+        src: '../../../static/images/content/help1x.png',
+        srcset: '../../../static/images/content/help2x.png 2x',
+        description: 'Помоги соседу (сайт объявлений)',
+        link: 'https://redsmoke19.github.io/israel-view/',
+        client: 'Nomia dev'
+      },
+      {
+        name: 'Israel',
+        src: '../../../static/images/content/israel1x.png',
+        srcset: '../../../static/images/content/israel2x.png 2x',
+        description: 'Учеба, работа и переезд в Израиль',
+        link: 'https://redsmoke19.github.io/israel-view/',
+        client: 'Тренировочный макет'
+      },
+      {
+        name: 'Nomia-mails',
+        src: '../../../static/images/content/mails1x.png',
+        srcset: '../../../static/images/content/mails2x.png 2x',
+        description: 'Верста HTML писем',
+        link: 'https://redsmoke19.github.io/nomia-mails-view/',
+        client: 'Nomia Dev'
+      },
+      {
+        name: 'Nomia',
+        src: '../../../static/images/content/nomia1x.png',
+        srcset: '../../../static/images/content/nomia2x.png 2x',
+        description: 'Nomia - системы автоматизации (шапка, команда, контакты)',
+        link: 'https://nomia.net',
+        client: 'Nomia Dev'
+      },
+      {
+        name: 'Keksogram',
+        src: '../../../static/images/content/keksogram1x.png',
+        srcset: '../../../static/images/content/keksogram2x.png 2x',
+        description: 'Кексограмм',
+        link: 'https://redsmoke19.github.io/keksogram/',
+        client: 'HTML Academy (обучение)'
+      },
+      {
+        name: 'Buy in Ciprus',
+        src: '../../../static/images/content/cyprus1x.png',
+        srcset: '../../../static/images/content/cyprus2x.png 2x',
+        description: 'Недвижимость на Кипре',
+        link: 'https://www.buyincyprus.ru',
+        client: 'Nomia Dev'
+      },
+      {
+        name: 'Weather widget',
+        src: '../../../static/images/content/weather1x.png',
+        srcset: '../../../static/images/content/weather2x.png 2x',
+        description: 'Виджет погоды',
+        link: 'https://redsmoke19.github.io/Weather-widget/',
+        client: 'EPAM (тестовое задание)'
+      },
+      {
+        name: 'Mishka',
+        src: '../../../static/images/content/mishka1x.png',
+        srcset: '../../../static/images/content/mishka2x.png 2x',
+        description: 'Магазин игрушек ручной работы',
+        link: 'https://redsmoke19.github.io/mishka-view/',
+        client: 'HTMLAcademy (обучение)'
+      },
+      {
         name: 'Cat Energy',
         src: '../../../static/images/content/cat-energy1x.png',
         srcset: '../../../static/images/content/cat-energy2x.png 2x',
@@ -86,20 +150,28 @@
         client: 'HTMLAcademy (обучение)'
       },
       {
-        name: 'Buy in Ciprus',
-        src: '../../../static/images/content/cyprus1x.png',
-        srcset: '../../../static/images/content/cyprus2x.png 2x',
-        description: 'Недвижимость на Кипре',
-        link: 'https://www.buyincyprus.ru',
-        client: 'Nomia Dev'
+        name: 'Device',
+        src: '../../../static/images/content/device1x.png',
+        srcset: '../../../static/images/content/device2x.png 2x',
+        description: 'Магазин гаджетов Device',
+        link: 'https://redsmoke19.github.io/Device/',
+        client: 'HTMLAcademy (обучение)'
       },
       {
-        name: 'Buy in Ciprus',
-        src: '../../../static/images/content/cyprus1x.png',
-        srcset: '../../../static/images/content/cyprus2x.png 2x',
-        description: 'Недвижимость на Кипре',
-        link: 'https://www.buyincyprus.ru',
-        client: 'Nomia Dev'
+        name: 'Gllacy',
+        src: '../../../static/images/content/gllacy1x.png',
+        srcset: '../../../static/images/content/gllacy2x.png 2x',
+        description: 'Магазин мороженого Gllacy',
+        link: 'https://redsmoke19.github.io/gllacy/',
+        client: 'HTMLAcademy (обучение)'
+      },
+      {
+        name: 'Barbershop',
+        src: '../../../static/images/content/barbershop1x.png',
+        srcset: '../../../static/images/content/barbershop2x.png 2x',
+        description: 'Барбершоп "Бородинский"',
+        link: 'https://redsmoke19.github.io/Barbershop/',
+        client: 'HTMLAcademy (обучение)'
       }
     ];
 
