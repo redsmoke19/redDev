@@ -12,6 +12,12 @@
       justify-content: space-between;
     }
   }
+  &__item {
+    width: 100%;
+    @media screen and (min-width: $tablet-size) {
+      width: 30.5%;
+    }
+  }
   &__input {
     background-color: $grey-color;
     border: none;
@@ -29,7 +35,7 @@
     width: 100%;
     @media screen and (min-width: $tablet-size) {
       font-size: 15px;
-      width: 30.5%;
+      // width: 30.5%;
       &:hover {
         background-color: rgba($grey-color, .9);
       }
