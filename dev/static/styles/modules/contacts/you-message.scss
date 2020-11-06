@@ -12,7 +12,21 @@
       justify-content: space-between;
     }
   }
+  &__text {
+    position: relative;
+  }
+  &__error {
+    color: $error-color;
+    font-size: 12px;
+    left: 10px;
+    position: absolute;
+    top: -20px;
+    @media screen and (min-width: $tablet-size) {
+      top: -25px;
+    }
+  }
   &__item {
+    position: relative;
     width: 100%;
     @media screen and (min-width: $tablet-size) {
       width: 30.5%;
@@ -54,6 +68,9 @@
     &:focus {
       box-shadow: 0 0 10px rgba($white, .6);
       background-color: rgba($grey-color, .9);
+    }
+    &--error {
+      box-shadow: 0 0 10px rgba($error-color, .8);
     }
   }
   &__button {

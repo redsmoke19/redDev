@@ -6,16 +6,16 @@
   const formButton = document.querySelector('.you-message__button');
 
   const patternName = /^[а-яёА-ЯЁ\s]+$/;
-  const patternMail = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z])+$/;
-  const patternSpam = /[^\<\>\[\]%\&'`]+$/;
+  const patternMail = /^[A-Za-z0-9](([_.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z])+$/;
+  const patternSpam = /[^<>\[\]%&'`]+$/;
   const errorMessage = [
     'Незаполненное поле ввода',
     'Введите Ваше реальное имя',
-    'Укажите Вашу электронную почту',
-    'Неверный формат электронной почты',
+    'Укажите Вашу почту',
+    'Неверный формат почты',
     'Укажите тему сообщения',
     'Напишите текст сообщения',
-    'Ваше сообщение похоже на спам, уберите специальные символы'
+    'Уберите специальные символы'
   ];
   let isError = false;
 
@@ -76,12 +76,17 @@
     formElement.classList.add('you-message__input--error');
     errorBox.innerHTML = error;
     errorBox.style.display = 'block';
+    // let errorBox = document.createElement('span');
+    // errorBox.classList.add('you-message__error');
+    // errorBox.innerHTML = error;
+    // formElement.parentNode.append(errorBox);
   };
 
   const clearError = (focusElement) => {
     let errorBox = focusElement.nextElementSibling;
     focusElement.classList.remove('you-message__input--error');
     errorBox.style.display = 'none';
+    // errorBox.remove();
   };
 
   formElems.forEach(item => {
@@ -108,10 +113,10 @@
       if (error.length !== 0) {
         // устанавливаем флаг ошибки
         isError = true;
-        console.log(isError);
         // вызываем функцию отображения текста ошибки
         showError(property, error);
-      };
+      }
+      ;
     }
     if (!isError) {
       // вызываем функцию отправляющую данные формы, хранящиеся в объекте formVal, на сервер

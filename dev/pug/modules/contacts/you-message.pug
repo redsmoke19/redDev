@@ -10,8 +10,9 @@ section.you-message
 			li.you-message__item
 				input.you-message__input(type="text" name="subject" placeholder="Тема сообщения")
 				span.you-message__error
-		textarea.you-message__input.you-message__input--text(name="textMessage" placeholder="Ваш текст")
-		span.you-message__error
+		.you-message__text
+			textarea.you-message__input.you-message__input--text(name="textMessage" placeholder="Ваш текст")
+			span.you-message__error
 		button(type="submit").you-message__button.button Отправить сообщение
 	p.you-message__success
 		+icon('icon-success', 'you-message__icon', '25', '25')
