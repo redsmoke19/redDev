@@ -97,7 +97,7 @@
         name: 'Nomia-mails',
         src: '../../../static/images/content/mails1x.png',
         srcset: '../../../static/images/content/mails2x.png 2x',
-        description: 'Верста HTML писем',
+        description: 'Верстка HTML писем',
         link: 'https://redsmoke19.github.io/nomia-mails-view/',
         client: 'Nomia Dev'
       },
@@ -113,7 +113,7 @@
         name: 'Keksogram',
         src: '../../../static/images/content/keksogram1x.png',
         srcset: '../../../static/images/content/keksogram2x.png 2x',
-        description: 'Кексограмм',
+        description: 'Кексограм',
         link: 'https://redsmoke19.github.io/keksogram/',
         client: 'HTML Academy (обучение)'
       },

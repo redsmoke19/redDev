@@ -17,3 +17,8 @@ exports.default = gulp.series(
   dev,
   serve
 );
+
+exports.build = gulp.series(
+  clean,
+  dev
+);
