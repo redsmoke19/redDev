@@ -120,10 +120,43 @@
     }
     if (!isError) {
       // вызываем функцию отправляющую данные формы, хранящиеся в объекте formVal, на сервер
-      //   sendFormData(formValidate);
+      sendFormData(formValidate);
     }
     return false;
   };
+
+  const sendFormData = (formValidate) => {
+    var xhr = new XMLHttpRequest();
+    // формируем тело запроса, в котором указываем имена полей и их значения
+    let body = '&userName=' + encodeURIComponent(formValidate.userName) +
+      '&userMail=' + encodeURIComponent(formValidate.userMail) +
+      '&subject=' + encodeURIComponent(formValidate.subject) +
+      '&textMessage=' + encodeURIComponent(formValidate.textMessage);
+
+    // указываем метод передачи данных, адрес php-скрипта, который эти данные
+    // будет обрабатывать и способ отправки данных.
+    // значение 'true' соответствует асинхронному запросу
+    xhr.open('POST', 'send.php', true);
+    // формируем HTTP-заголовки
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Cache-Control', 'no-cache');
+
+    // отправляем тело запроса
+    xhr.send(body);
+
+    // XMLHttpRequest.onreadystatechange содержит обработчик события,
+    // вызываемый когда происходит событие readystatechange
+    xhr.onreadystatechange = function() {
+      // данные на сервер отправлены удачно и получен от него положительный ответ
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        // здесь расположен код вашей callback-функции
+        // например, она может выводить сообщение об успешной отправке письма
+        console.log('Отправлено');
+      }
+    };
+  };
+
   form.addEventListener('focus', () => {
     let focusElement = document.activeElement;
     if (focusElement !== formButton) {
