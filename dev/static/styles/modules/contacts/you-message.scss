@@ -98,7 +98,10 @@
     font-weight: 700;
     height: 46px;
     justify-content: center;
+    opacity: 0;
+    pointer-events: none;
     text-transform: uppercase;
+    transition: all linear 0.5s;
     @media screen and (min-width: $tablet-size) {
       font-size: 15px;
     }

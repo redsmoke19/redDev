@@ -26,10 +26,10 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // Настройки PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
-    $mail->isSMTP();   
+    $mail->isSMTP();
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
-    //$mail->SMTPDebug = 2;
+//    $mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     // Настройки вашей почты
@@ -38,16 +38,16 @@ try {
     $mail->Password   = 'StaL1990'; // Пароль на почте
 //    $mail->SMTPSecure = 'ssl';
     $mail->Port       = 2525;
-    $mail->setFrom('admin@olegtsyganov.ru', 'Oleg Tsyganov'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('admin@olegtsyganov.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('tsyganovdev@gmail.com');
     $mail->addAddress('redsmoke19@yandex.ru');
+    $mail->addAddress('tsyganovdev@gmail.com'); // Ещё один, если нужен
 
 // Отправка сообщения
 $mail->isHTML(true);
 $mail->Subject = $title;
-$mail->Body = $body;    
+$mail->Body = $body;
 
 // Проверяем отравленность сообщения
 if ($mail->send()) {$result = "success";} 

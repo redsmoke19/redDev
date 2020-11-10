@@ -125,21 +125,7 @@
     return false;
   };
 
-  const showMsg = (message, color) => {
-    var succesButton = document.querySelector('.you-message__success');
-    var succesText = document.querySelector('.you-message__success span');
-    succesButton.style.opacity = 1;
-    succesButton.style.backgroundColor = color;
-    succesText.innerHTML = message;
-    if (message === 'Сообщение успешно отправлено') {
-      setTimeout(function() {
-        succesButton.style.opacity = 0;
-      }, 5000);
-    };
-  };
-
   const sendFormData = (formValidate) => {
-    showMsg('Подождите, идет отправка сообщения', '#b1b1b1');
     var xhr = new XMLHttpRequest();
     // формируем тело запроса, в котором указываем имена полей и их значения
     let body = '&userName=' + encodeURIComponent(formValidate.userName) +
@@ -158,7 +144,7 @@
 
     // отправляем тело запроса
     xhr.send(body);
-
+    console.log(body);
     // XMLHttpRequest.onreadystatechange содержит обработчик события,
     // вызываемый когда происходит событие readystatechange
     xhr.onreadystatechange = function() {
@@ -166,13 +152,8 @@
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         // здесь расположен код вашей callback-функции
         // например, она может выводить сообщение об успешной отправке письма
-        showMsg('Сообщение успешно отправлено', '#28a745');
-        form.reset();
-      } else if (xhr.status > 400 && xhr.status < 500) {
-        showMsg('Ресурс не найден', '#DC352F');
-      } else {
-        showMsg('Ошибка сервера', '#DC352F');
-      };
+        console.log('Отправлено успешно');
+      }
     };
   };
 
