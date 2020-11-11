@@ -30,7 +30,7 @@ section.person-info
 							span.person-list__name  Самара
 						li.person-list__item
 							span.person-list__title Телефон:
-							span.person-list__name  +7(927)-203-00-36
+							span.person-list__name  +7(927) 203-00-36
 						li.person-list__item
 							span.person-list__title Email:
 							span.person-list__name.person-list__name--small  TsyganovDev@gmail.com
@@ -40,9 +40,10 @@ section.person-info
 						li.person-list__item
 							span.person-list__title Языки:
 							span.person-list__name.person-list__name--small  Русский, Английский
-				button.person-info__button.button
-					span Скачать резюме
-						+icon('icon-download', 'person-info__icon', '18', '18')
+				form(method="GET" action="static/files/resume.pdf")
+					button(type="submit").person-info__button.button
+						span Скачать резюме
+							+icon('icon-download', 'person-info__icon', '18', '18')
 			.person-info__stat.achievements
 				include achievements
 
