@@ -12,7 +12,8 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
-	body(class=page)
+
+body(class=page)
 		.overlay
 		//- .wrapper
 		include ../modules/header/header
@@ -25,3 +26,4 @@ html(lang="ru-RU")
 			script(src="static/js/main.js")
 			if page === 'contacts-page'
 				script(src="static/js/form.js")
+				script(src="https://www.google.com/recaptcha/api.js" async defer)

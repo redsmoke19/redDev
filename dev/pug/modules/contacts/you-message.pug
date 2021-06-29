@@ -13,6 +13,7 @@ section.you-message
 		.you-message__text
 			textarea.you-message__input.you-message__input--text(name="textMessage" placeholder="Ваш текст")
 			span.you-message__error
+		.g-recaptcha(data-sitekey="6LdOd-QZAAAAAMSQYGdp3DhYMw8Wgh7041l7jyjq" data-theme="dark")
 		button(type="submit").you-message__button.button Отправить сообщение
 	p.you-message__success
 		+icon('icon-success', 'you-message__icon', '25', '25')

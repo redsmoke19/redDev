@@ -27,7 +27,7 @@
     for (let i = 0; i < form.elements.length; i++) {
       let element = form.elements[i];
       // т.к. имя поля находятся в верхнем регистре (так их записывает JS при создании объекта 'form'), переведём имя элемента в нижний регистр и проверим, не является ли текущий элемент кнопкой, значение которой нас не интересует
-      if (element.tagName.toLowerCase() !== 'button') {
+      if (element.tagName.toLowerCase() !== 'button' && element.id !== 'g-recaptcha-response') {
         controls[element.name] = element.value;
       }
     }
@@ -105,6 +105,8 @@
 
   const validForm = (e) => {
     e.preventDefault();
+    let captcha = grecaptcha.getResponse();
+    let captchaElement = document.querySelector('.g-recaptcha div');
     let formValidate = getFormData(form);
     let error;
     for (let property in formValidate) {
@@ -115,13 +117,20 @@
         isError = true;
         // вызываем функцию отображения текста ошибки
         showError(property, error);
-      }
-      ;
+      };
     }
-    if (!isError) {
+
+    if (captcha == '') {
+      captchaElement.style.boxShadow = '0 0 10px #db5f5f';
+    }
+    if (!captcha == '') {
+      captchaElement.style.boxShadow = '';
+    }
+
+    if (!isError && !captcha == '') {
       // вызываем функцию отправляющую данные формы, хранящиеся в объекте formVal, на сервер
       sendFormData(formValidate);
-    }
+    };
     return false;
   };
 
@@ -168,6 +177,7 @@
         // например, она может выводить сообщение об успешной отправке письма
         showMsg('Сообщение успешно отправлено', '#28a745');
         form.reset();
+        grecaptcha.reset();
       } else if (xhr.status > 400 && xhr.status < 500) {
         showMsg('Ресурс не найден', '#DC352F');
       } else {
